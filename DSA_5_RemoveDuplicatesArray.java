@@ -29,7 +29,7 @@ class Operations{
     }
 }
 
-public class DSA_5_RemoveDuplicates {
+public class DSA_5_RemoveDuplicatesArray {
     
     public static void main(String[] args){
         

@@ -11,7 +11,7 @@ Input: prices = [7, 1, 5, 3, 6, 4]
 Output: 5 
  */
 
-public class DSA_7_BestTimeToBuyNSellStock {
+public class DSA_7_BestTimeToBuyNSellStockArray {
     public static int maxProfit(int[] prices) {
         
         int buyStockDay = 0;

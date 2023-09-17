@@ -13,7 +13,7 @@ permutation(array1, array2)
 Output: true
  */
 
-public class DSA_10_Permutation {
+public class DSA_10_PermutationArray {
         public static boolean permutation(int[] array1, int[] array2){
             
             boolean result = false;

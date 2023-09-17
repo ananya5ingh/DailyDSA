@@ -15,7 +15,7 @@ Output: [1,2]
 
 import java.util.Arrays;
 
-public class DSA_8_TwoSum {
+public class DSA_8_TwoSumArray {
 
     public static int[] twoSum(int[] nums, int target) {
         

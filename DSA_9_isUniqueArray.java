@@ -8,7 +8,7 @@ int[] intArray = {1,2,3,4,5,6};
 isUnique(intArray) // true
  */
 
-public class DSA_9_isUnique {
+public class DSA_9_isUniqueArray {
     public static boolean isUnique(int[] intArray) {
         
         for(int i=0; i<intArray.length; i++){

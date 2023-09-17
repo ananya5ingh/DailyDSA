@@ -28,7 +28,7 @@ class Operations{
 
 }
 
-public class DSA_3_PrintingPairs {
+public class DSA_3_PrintingPairsArray {
 
     public static void main(String[] args){
 

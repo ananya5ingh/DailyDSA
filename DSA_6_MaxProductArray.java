@@ -10,7 +10,7 @@ int[] intArray = {10,20,30,40,50};
 maxProduct(intArray) // (40,50)
  */
 
-public class DSA_6_MaxProduct {
+public class DSA_6_MaxProductArray {
     public static String maxProduct(int[] intArray) {
         
         int maxProduct=0;

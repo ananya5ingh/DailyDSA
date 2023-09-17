@@ -7,7 +7,7 @@ and returns a new integer array with unique elements. (remove duplicates)
 */
 
 import java.util.Arrays;
-public class DSA_1_DuplicateNumber {
+public class DSA_1_DuplicateNumberArray {
   public static int[] removeDuplicates(int[] arr) {
     
     int counter=0; // TC: O(1) // SC: O(1) 
