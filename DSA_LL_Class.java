@@ -42,7 +42,7 @@ class LinkedList{
                 System.out.print(" --> ");
             }
         }
-        System.out.println(); 
+        System.out.println("\n"); 
     }
 }
 
@@ -60,15 +60,17 @@ public class DSA_LL_Class {
 
         ll.insert(2);
         ll.insert(3);
-        ll.insert(2);
+        ll.insert(4);
         ll.insert(5);
 
         ll.traversal();
 
-        obj1.deleteDups(ll);
-        ll.traversal();
+        // obj1.deleteDups(ll);
+        // ll.traversal();
 
-        System.out.println(obj2.nthToLast(ll, 2));
+        Node result = obj2.nthToLast(ll, 2);
+
+        System.out.println(result.value);
 
         
 
