@@ -1,24 +1,27 @@
 public class DSA_14_PartitionLL {
+
     LinkedList partition(LinkedList ll, int x) {
         
         Node currentNode = ll.head;
-        ll.tail = ll.head;
-
-        while(currentNode != null){
-
-            Node next = currentNode.next;
-            if(currentNode.value < x){
-
-                currentNode.next = ll.head;
+        
+        ll.head = currentNode;
+        ll.tail = currentNode;
+        
+        for(int i=0; i<ll.size; i++){
+            
+            if(currentNode.next.value<x){
+                currentNode.next.next = currentNode;
+                currentNode = currentNode.next;
                 ll.head = currentNode;
             }
             else{
-                ll.tail.next = currentNode;
-                ll.tail = currentNode;
+                Node tempNode = currentNode.next;
+                ll.tail.next = tempNode;
+                currentNode.next = currentNode.next.next;
+                currentNode = currentNode.next;
+                ll.tail = tempNode;
             }
-            currentNode = next;
         }
-        ll.tail.next = null;
         return ll;
   }
 
@@ -26,18 +29,29 @@ public class DSA_14_PartitionLL {
 
 
 
+//     LinkedList partition(LinkedList ll, int x) {
+        
+//         Node currentNode = ll.head;
+//         ll.tail = ll.head;
 
+//         while(currentNode != null){
 
+//             Node next = currentNode.next;
+//             if(currentNode.value < x){
 
+//                 currentNode.next = ll.head;
+//                 ll.head = currentNode;
+//             }
+//             else{
+//                 ll.tail.next = currentNode;
+//                 ll.tail = currentNode;
+//             }
+//             currentNode = next;
+//         }
+//         ll.tail.next = null;
+//         return ll;
 
-
-
-
-
-
-
-
-
+//   } // TC: O(n) SC: O(1)
 
 //     LinkedList partition(LinkedList ll, int x) {
         
