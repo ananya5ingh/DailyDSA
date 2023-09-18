@@ -10,6 +10,7 @@ class LinkedList{
     public Node head;
     public Node tail;
     public int size;
+    
 
     public void create(int nodeValue){
 
@@ -55,22 +56,28 @@ public class DSA_LL_Class {
 
         DSA_11_RemoveDupsLL obj1 = new DSA_11_RemoveDupsLL();
         DSA_12_ReturnNthToLastLL obj2 = new DSA_12_ReturnNthToLastLL();
+        DSA_14_PartitionLL obj3 = new DSA_14_PartitionLL();
 
         ll.create(1);
 
-        ll.insert(2);
-        ll.insert(3);
-        ll.insert(4);
+        ll.insert(9);
         ll.insert(5);
+        ll.insert(10);
+        ll.insert(2);
 
         ll.traversal();
 
         // obj1.deleteDups(ll);
         // ll.traversal();
 
-        Node result = obj2.nthToLast(ll, 2);
+        Node result1 = obj2.nthToLast(ll, 2);
 
-        System.out.println(result.value);
+        System.out.println(result1.value);
+        ll.traversal();
+        obj3.partition(ll, 4);
+        ll.traversal();
+        
+
 
         
 

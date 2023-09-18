@@ -1,6 +1,6 @@
 /*
 17.09.2023
-
+ 
 Question:
 
 Rotate Matrix
@@ -14,6 +14,7 @@ public class DSA_13_RotateMatrixArray {
     public static boolean rotateMatrix(int[][] matrix){
 
         if(matrix.length == 0 || matrix.length != matrix[0].length){
+            // ^if 0, matrix doesn't have any elements  ^if not equal, not an nxn matrix
             return false;
         }
         int n = matrix.length;
