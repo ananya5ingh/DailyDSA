@@ -2,29 +2,39 @@ public class DSA_14_PartitionLL {
 
     LinkedList partition(LinkedList ll, int x) {
         
+        Node before_head = new Node();
+        before_head.value = -1;
+        
+        Node before_tail = before_head;
+        
+        Node after_head = new Node();
+        after_head.value = -1;
+        Node after_tail = after_head;
+        
         Node currentNode = ll.head;
         
-        ll.head = currentNode;
-        ll.tail = currentNode;
-        
-        for(int i=0; i<ll.size; i++){
-            
-            if(currentNode.next.value<x){
-                currentNode.next.next = currentNode;
-                currentNode = currentNode.next;
-                ll.head = currentNode;
+        while(currentNode != null){
+            if(currentNode.value<x){
+                
+                currentNode.next = before_head;
+                ll.traversal();
+                before_head = currentNode;
+                // before_tail.next = currentNode;
+                // before_tail = before_tail.next;
             }
             else{
-                Node tempNode = currentNode.next;
-                ll.tail.next = tempNode;
-                currentNode.next = currentNode.next.next;
-                currentNode = currentNode.next;
-                ll.tail = tempNode;
+                
+                after_tail.next = currentNode;
+                after_tail = after_tail.next;
             }
+            
+            currentNode = currentNode.next;
         }
+        before_tail.next = after_head.next;
+        after_tail.next = null;
+
         return ll;
   }
-
 
 
 

@@ -70,12 +70,12 @@ public class DSA_LL_Class {
         // obj1.deleteDups(ll);
         // ll.traversal();
 
-        Node result1 = obj2.nthToLast(ll, 2);
+        // Node result1 = obj2.nthToLast(ll, 2);
 
-        System.out.println(result1.value);
-        ll.traversal();
+        // System.out.println(result1.value);
+        // ll.traversal();
         obj3.partition(ll, 4);
-        ll.traversal();
+        
         
 
 
