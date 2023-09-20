@@ -24,6 +24,10 @@ class LinkedList{
 
     public void insert(int nodeValue){
 
+        if(head == null){
+            create(nodeValue);
+            return;
+        }
         Node newNode = new Node();
         newNode.value = nodeValue;
         newNode.next = null;
@@ -52,20 +56,25 @@ public class DSA_LL_Class {
     
     public static void main(String[] args){
 
-        LinkedList ll = new LinkedList();
+        LinkedList ll1 = new LinkedList();
+        LinkedList ll2 = new LinkedList();
 
         DSA_11_RemoveDupsLL obj1 = new DSA_11_RemoveDupsLL();
         DSA_12_ReturnNthToLastLL obj2 = new DSA_12_ReturnNthToLastLL();
         DSA_14_PartitionLL obj3 = new DSA_14_PartitionLL();
+        DSA_15_SumListsLL obj4 = new DSA_15_SumListsLL();
 
-        ll.create(1);
+        ll1.insert(7);
+        ll1.insert(1);
+        ll1.insert(6);
 
-        ll.insert(9);
-        ll.insert(5);
-        ll.insert(10);
-        ll.insert(2);
+        ll1.traversal();
 
-        ll.traversal();
+        ll2.insert(5);
+        ll2.insert(9);
+        ll2.insert(2);
+
+        ll2.traversal();
 
         // obj1.deleteDups(ll);
         // ll.traversal();
@@ -74,9 +83,11 @@ public class DSA_LL_Class {
 
         // System.out.println(result1.value);
         // ll.traversal();
-        obj3.partition(ll, 4);
+
+        // obj3.partition(ll, 4);
+        // ll.traversal();
         
-        
+        obj4.sumLists(ll1, ll2);
 
 
         

@@ -1,43 +1,46 @@
+/*
+19.09.2023
+
+Question:
+
+Partition
+Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x.
+
+Example
+Input: 1 -> 9 -> 5  -> 10 -> 2  [x=4]
+Output: 2 -> 1 -> 9 -> 5 -> 10
+ */
+
 public class DSA_14_PartitionLL {
 
     LinkedList partition(LinkedList ll, int x) {
-        
-        Node before_head = new Node();
-        before_head.value = -1;
-        
-        Node before_tail = before_head;
-        
-        Node after_head = new Node();
-        after_head.value = -1;
-        Node after_tail = after_head;
-        
+
         Node currentNode = ll.head;
-        
+        ll.tail = ll.head;
+
         while(currentNode != null){
+
+            Node nextNode = currentNode.next;
+
             if(currentNode.value<x){
-                
-                currentNode.next = before_head;
-                ll.traversal();
-                before_head = currentNode;
-                // before_tail.next = currentNode;
-                // before_tail = before_tail.next;
+
+                currentNode.next = ll.head;
+                ll.head = currentNode;
             }
             else{
-                
-                after_tail.next = currentNode;
-                after_tail = after_tail.next;
+
+                ll.tail.next = currentNode;
+                ll.tail = currentNode;
             }
-            
-            currentNode = currentNode.next;
+            currentNode = nextNode;
         }
-        before_tail.next = after_head.next;
-        after_tail.next = null;
+
+        ll.tail.next = null;
 
         return ll;
-  }
+    }
 
-
-
+}
 
 //     LinkedList partition(LinkedList ll, int x) {
         
@@ -88,4 +91,4 @@ public class DSA_14_PartitionLL {
         
 //         return ll;
 //   }
-}
+
