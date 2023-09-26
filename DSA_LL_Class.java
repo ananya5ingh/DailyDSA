@@ -63,18 +63,19 @@ public class DSA_LL_Class {
         DSA_12_ReturnNthToLastLL obj2 = new DSA_12_ReturnNthToLastLL();
         DSA_14_PartitionLL obj3 = new DSA_14_PartitionLL();
         DSA_15_SumListsLL obj4 = new DSA_15_SumListsLL();
+        DSA_16_IntersectionLL obj5 = new DSA_16_IntersectionLL();
 
-        ll1.insert(7);
-        ll1.insert(1);
-        ll1.insert(6);
+        // ll1.insert(7);
+        // ll1.insert(1);
+        // ll1.insert(6);
 
-        ll1.traversal();
+        // ll1.traversal();
 
-        ll2.insert(5);
-        ll2.insert(9);
-        ll2.insert(2);
+        // ll2.insert(5);
+        // ll2.insert(9);
+        // ll2.insert(2);
 
-        ll2.traversal();
+        // ll2.traversal();
 
         // obj1.deleteDups(ll);
         // ll.traversal();
@@ -88,6 +89,26 @@ public class DSA_LL_Class {
         // ll.traversal();
         
         obj4.sumLists(ll1, ll2);
+
+        LinkedList llA = new LinkedList();
+   llA.insert(3);
+   llA.insert(1);
+   llA.insert(5);
+   llA.insert(9);
+   LinkedList llB = new LinkedList();
+   llB.insert(2);
+   llB.insert(4);
+   llB.insert(6);
+   
+   obj5.addSameNode(llA, llB, 7);
+   obj5.addSameNode(llA, llB, 2);
+   obj5.addSameNode(llA, llB, 1);
+   Node inter = obj5.findIntersection(llA, llB);
+   System.out.println(inter.value);
+ 
+// 7
+
+
 
 
         
