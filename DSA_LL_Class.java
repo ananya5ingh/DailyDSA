@@ -91,27 +91,22 @@ public class DSA_LL_Class {
         obj4.sumLists(ll1, ll2);
 
         LinkedList llA = new LinkedList();
-   llA.insert(3);
-   llA.insert(1);
-   llA.insert(5);
-   llA.insert(9);
-   LinkedList llB = new LinkedList();
-   llB.insert(2);
-   llB.insert(4);
-   llB.insert(6);
-   
-   obj5.addSameNode(llA, llB, 7);
-   obj5.addSameNode(llA, llB, 2);
-   obj5.addSameNode(llA, llB, 1);
-   Node inter = obj5.findIntersection(llA, llB);
-   System.out.println(inter.value);
- 
-// 7
-
-
-
-
+        llA.insert(3);
+        llA.insert(1);
+        llA.insert(5);
+        llA.insert(9);
+        LinkedList llB = new LinkedList();
+        llB.insert(2);
+        llB.insert(4);
+        llB.insert(6);
         
+        obj5.addSameNode(llA, llB, 7);
+        obj5.addSameNode(llA, llB, 2);
+        obj5.addSameNode(llA, llB, 1);
+        Node inter = obj5.findIntersection(llA, llB);
+        System.out.println(inter.value);
+        
+        // 7 
 
     }
 }

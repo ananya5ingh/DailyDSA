@@ -1,7 +1,8 @@
 /*
-25.09.2023
+27.09.2023
 Starting DailyDSA again, this time for real
 
+Question:
 Intersection
 Given two (singly) linked lists, determine if the two lists intersect. 
 Return the intersecting node. Note that the intersection is defined based on reference, not value. 
@@ -30,83 +31,57 @@ LinkedList llA = new LinkedList();
 public class DSA_16_IntersectionLL{
 
   //getKthNode
-  public Node getKthNode(Node head, int k){
+    public Node getKthNode(Node head, int k){
 
-    Node current = head;
-    while(k>0 && current != null){
-      current = current.next;
-      k--;
+      Node current = head;
+      while(k>0 && current != null){
+        current = current.next;
+        k--;
+      }
+      return current;
+
     }
-    return current;
-
-  }
 
   // Add same node 
-public void addSameNode(LinkedList llA, LinkedList llB, int nodeValue) {
-  Node newNode = new Node();
-  newNode.value = nodeValue;
-  llA.tail.next = newNode;
-  llA.tail = newNode;
-  llB.tail.next = newNode;
-  llB.tail = newNode;
+  public void addSameNode(LinkedList llA, LinkedList llB, int nodeValue) {
+    Node newNode = new Node();
+    newNode.value = nodeValue;
+    llA.tail.next = newNode;
+    llA.tail = newNode;
+    llB.tail.next = newNode;
+    llB.tail = newNode;
 
-}
+  }
 
 //TODO
-public Node findIntersection(LinkedList lla, LinkedList llb){
+  public Node findIntersection(LinkedList lla, LinkedList llb){
 
-  if(lla.head == null | llb.head == null){
-    return null;
-  }
-
-  if(lla.tail != llb.tail){
-    return null;
-  }
-
-  Node shorter = new Node();
-  Node longer = new Node();
-
-  if(lla.size > llb.size){
-    longer = lla.head;
-    shorter = llb.head;
-  }
-  else{
-    shorter = lla.head;
-    longer = llb.head;
-  }
-
-  // changing starting point for longer LL
-
-  longer = getKthNode(longer, )
-
-    
-    Node tempNode1 = lla.head;
-    Node tempNode2 = llb.head;
-    Node outputNode = null; 
-    
-    boolean intersectFlag = false;
-    
-    if(tempNode1 == tempNode2){
-        intersectFlag = true;
+    if(lla.head == null | llb.head == null){
+      return null;
     }
-    
-    while(tempNode1 != null){
-        while(tempNode2 != null){
-            if(tempNode2 == tempNode1){
-                intersectFlag = true;
-                outputNode = tempNode1;
-                break;
 
-            }
-            tempNode2 = tempNode2.next;
-        }
-        tempNode1 = tempNode1.next;
+    if(lla.tail != llb.tail){
+      return null;
     }
-    
-   
-  return outputNode;
 
-}
+    Node shorter = new Node();
+    Node longer = new Node();
 
+    if(lla.size > llb.size){
+      longer = lla.head;
+      shorter = llb.head;
+    }
+    else{
+      shorter = lla.head;
+      longer = llb.head;
+    }
+
+    longer = getKthNode(longer, Math.abs(lla.size - llb.size)); // changing starting point for longer LL
+    while(shorter != longer){ // loop until both LL(shorter and longer)point to same node
+      shorter = shorter.next;
+      longer = longer.next;
+    }
+    return longer; // can return either, shorter or longer (since they point to the same node)
+  } // TC: O(a+b) where a is the size of lla and b is the size of llb // SC: O(1)
 }
 
