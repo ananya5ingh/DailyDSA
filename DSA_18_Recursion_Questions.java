@@ -27,12 +27,25 @@ public class DSA_18_Recursion_Questions {
     // Q3. GCD
 
     public static int gcd(int a, int b){
-
+        if(a<0 || b<0){
+            return -1;
+        }
         if(b == 0){
             return a;
         }
          return gcd(b, a%b);
     }
+
+// 5.10.2023
+
+    public static int decimalToBinary(int n){
+
+        if(n == 0){
+            return 0;
+        }
+        return n%2 + 10*decimalToBinary(n/2);
+    }
+
 
     public static void main(String[] args){
         
@@ -44,6 +57,9 @@ public class DSA_18_Recursion_Questions {
 
         var result3 = gcd(8,12);
         System.out.println(result3);
+
+        var result4 = decimalToBinary(10 );
+        System.out.println(result4);
     }
 
 }
