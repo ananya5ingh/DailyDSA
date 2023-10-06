@@ -46,6 +46,70 @@ public class DSA_18_Recursion_Questions {
         return n%2 + 10*decimalToBinary(n/2);
     }
 
+// 6.10.2023
+
+/*
+Question
+ * recursiveRange
+Write a function called recursiveRange which accepts a number and adds up all the numbers from 0 to the number passed to the function.
+ */
+
+ public static int recursiveRange(int num) {
+    //  TODO
+    
+    if(num<0){
+        return 0;
+    }
+    return num+recursiveRange(num-1);
+   } 
+
+/*
+Question:
+product of Array
+Write a function called productOfArray which takes in an array of numbers and returns the product of them all.
+
+Examples
+
+int arr[] = { 1, 2, 3, 4, 5 }; 
+productofArray(arr, arr.length); #120
+ */
+
+ public static int productofArray(int A[], int N) 
+ {
+     //int index = N-1;
+     if(N <= 0){
+         return 1;
+     }
+     return A[N-1]*productofArray(A, N-1);
+ } 
+
+ /*
+Question:
+fib
+Write a recursive function called fib which accepts a number and returns the nth number in the Fibonacci sequence. Recall that the Fibonacci sequence is the sequence of whole numbers 0,1, 1, 2, 3, 5, 8, ... which starts with 0 and 1, and where every number thereafter is equal to the sum of the previous two numbers.
+
+Examples
+
+fib(4) # 3
+fib(10) # 55
+fib(28) # 317811
+fib(35) # 9227465
+  */
+
+  public static int fib(int n) {
+    // TODO
+    
+    if (n<0) {
+      return -1;
+    }
+    if (n==0 || n==1) {
+      return n;
+    }
+    return n + fib(n-1);
+
+  }
+ 
+
 
     public static void main(String[] args){
         
@@ -61,5 +125,7 @@ public class DSA_18_Recursion_Questions {
         var result4 = decimalToBinary(10 );
         System.out.println(result4);
     }
+
+
 
 }
