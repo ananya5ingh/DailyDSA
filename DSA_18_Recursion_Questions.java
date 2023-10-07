@@ -108,7 +108,50 @@ fib(35) # 9227465
     return n + fib(n-1);
 
   }
+
+// 7.10.2023
+
+/*
+Question: 
+reverse
+Write a recursive function called reverse which accepts a string and returns a new string in reverse.
+
+Examples
+
+reverse('java') # 'avaj'
+reverse('appmillers') # 'srellimppa'
+ */
  
+
+
+
+/*
+Question:
+isPalindrome
+Write a recursive function called isPalindrome which returns true if the string passed to it is a palindrome (reads the same forward and backward). Otherwise it returns false.
+
+Examples
+
+isPalindrome('awesome') # false
+isPalindrome('foobar') # false
+isPalindrome('tacocat') # true
+isPalindrome('amanaplanacanalpanama') # true
+isPalindrome('amanaplanacanalpandemonium') # false
+ */
+
+
+
+/*
+Question:
+someRecursive
+Write a recursive function called someRecursive which accepts an array and a callback. The function returns true if a single value in the array returns true when passed to the callback. Otherwise it returns false.
+
+Examples
+
+someRecursive({1,2,3,4}, isOdd) # true
+someRecursive({4,6,8,9}, isOdd) # true
+someRecursive({4,6,8}, isOdd) # false
+ */
 
 
     public static void main(String[] args){
