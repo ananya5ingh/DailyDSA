@@ -1,3 +1,5 @@
+import java.util.*;
+
 // 4.10.2023
 
 public class DSA_18_Recursion_Questions {
@@ -109,10 +111,10 @@ fib(35) # 9227465
 
   }
 
-// 7.10.2023
+// 08.10.2023
 
 /*
-Question: 
+Question:
 reverse
 Write a recursive function called reverse which accepts a string and returns a new string in reverse.
 
@@ -121,28 +123,34 @@ Examples
 reverse('java') # 'avaj'
 reverse('appmillers') # 'srellimppa'
  */
- 
 
-
+  public String reverse(String str){
+    if(str.isEmpty()){
+        return str;
+    }
+    return reverse(str.substring(1)) + str.charAt(0);
+  }
 
 /*
 Question:
 isPalindrome
-Write a recursive function called isPalindrome which returns true if the string passed to it is a palindrome (reads the same forward and backward). Otherwise it returns false.
-
-Examples
-
-isPalindrome('awesome') # false
-isPalindrome('foobar') # false
-isPalindrome('tacocat') # true
-isPalindrome('amanaplanacanalpanama') # true
-isPalindrome('amanaplanacanalpandemonium') # false
  */
 
+  public boolean isPalindrome(String s){
+    if(s.length() == 0 || s.length() == 1){
+        return true;
+    }
+    if(s.charAt(0) == s.charAt(s.length()-1)){
+        return isPalindrome(s.substring(1, s.length()-1));
+    }
+        return false;
+    
+
+  }
 
 
 /*
-Question:
+Question: 
 someRecursive
 Write a recursive function called someRecursive which accepts an array and a callback. The function returns true if a single value in the array returns true when passed to the callback. Otherwise it returns false.
 
@@ -153,6 +161,78 @@ someRecursive({4,6,8,9}, isOdd) # true
 someRecursive({4,6,8}, isOdd) # false
  */
 
+ public class OddFunction {
+    boolean run(int num) {
+        if (num % 2 == 0) { 
+            return false; }
+       else {
+           return true;
+       }
+    }
+  }
+
+  public boolean someRecursive(int[] arr, OddFunction odd){
+    if(arr.length == 0){
+        return false;
+    }
+    else if(odd.run(arr[0]) == false){
+        return someRecursive(Arrays.copyOfRange(arr,1,arr.length), odd);
+    }
+    else{
+        return true;
+    }
+  }
+
+// 8.10.2023
+
+/*
+Question: 
+First Uppercase
+Given a string find its first uppercase letter
+
+Example
+
+Input : appmillerS
+Output : S
+ */
+
+  public static char first(String str){
+    if(str.isEmpty()){
+        return  ' ';
+    }
+    if(Character.isUpperCase(str.charAt(0))){
+        return str.charAt(0);
+    }
+    else{
+        return first(str.substring(1, str.length()));
+    }
+  }
+
+/*
+Question: 
+capitalizeWord
+Implement a function that capitalizes each word in String.
+
+Example
+
+input: i love java
+output : I Love Java
+ */
+
+  public static String capitalizeWord(String str){
+
+    if(str.isEmpty()){
+        return str;
+    }
+    char chr =  str.charAt(str.length()-1);
+    if(str.length()==1){
+        return Character.toString(Character.toUpperCase(chr));
+    }
+    if((str.substring(str.length()-2, str.length()-1).equals(" "))){
+        chr = Character.toUpperCase(chr);
+    }
+    return capitalizeWord(str.substring(0,str.length()-1))+Character.toString(chr);
+  }
 
     public static void main(String[] args){
         
