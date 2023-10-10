@@ -30,6 +30,7 @@ class StackMin{
     public int min(){
         return min.value;
     }
+    // TC: O(1)
 
     public void push(int value){
         if(min == null){
@@ -43,6 +44,7 @@ class StackMin{
         }
         top = new Node(value, top);
     }
+    // TC: O(1)
 
     public int pop(){
         min = min.next;
@@ -50,6 +52,7 @@ class StackMin{
         top = top.next;
         return result;
     }
+    // TC: O(1)
 }
 public class DSA_23_StackMinimum {
 
@@ -65,13 +68,13 @@ public class DSA_23_StackMinimum {
 
         newStack.push(3);
         System.out.println(newStack.min());
-
+ 
         newStack.push(7);
         System.out.println(newStack.min());
 
         newStack.pop();
         System.out.println(newStack.min());
-        
+
         newStack.pop();
         System.out.println(newStack.min());
     }
