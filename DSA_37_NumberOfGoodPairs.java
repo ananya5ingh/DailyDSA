@@ -1,5 +1,6 @@
 /*
 Day 1 - 25.10.2023
+Q3
 Number Of Good Pairs
 Given an array of integers nums, return the number of good pairs.
 
